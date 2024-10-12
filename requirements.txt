@@ -13,3 +13,4 @@ amrlib
 seaborn
 scikit-learn
 Levenshtein
+Pillow
