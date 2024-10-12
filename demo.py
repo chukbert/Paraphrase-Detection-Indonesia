@@ -81,8 +81,7 @@ def print_validasi(model_option, model, df, validation=False):
     ax.set_title('Confusion Matrix')
     st.pyplot(fig)
 
-sys.path.append(os.path.abspath("/home/faizmuh/ta-v2/amr-tst-indo"))
-from visualize import render
+from amr-tst-indo.visualize import render
 from PIL import Image
 
 def show_amr(df):
