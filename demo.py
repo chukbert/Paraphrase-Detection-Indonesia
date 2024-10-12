@@ -80,8 +80,8 @@ def print_validasi(model_option, model, df, validation=False):
     ax.set_ylabel('True Labels')
     ax.set_title('Confusion Matrix')
     st.pyplot(fig)
-
-from amr-tst-indo.visualize import render
+sys.path.append(os.path.join(os.path.dirname(__file__), 'amr-tst-indo'))
+from visualize import render
 from PIL import Image
 
 def show_amr(df):
