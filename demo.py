@@ -80,9 +80,24 @@ def print_validasi(model_option, model, df, validation=False):
     ax.set_ylabel('True Labels')
     ax.set_title('Confusion Matrix')
     st.pyplot(fig)
-sys.path.append(os.path.join(os.path.dirname(__file__), 'amr-tst-indo'))
-from visualize import render
+# sys.path.append(os.path.join(os.path.dirname(__file__), 'amr-tst-indo'))
+# from visualize import render
+# from PIL import Image
+import importlib.util
+import os
 from PIL import Image
+
+# Dapatkan path untuk visualize.py di dalam folder 'amr-tst-indo'
+module_name = "visualize"
+file_path = os.path.join(os.path.dirname(__file__), 'amr-tst-indo', 'visualize.py')
+
+# Mengimpor visualize.py secara dinamis
+spec = importlib.util.spec_from_file_location(module_name, file_path)
+visualize = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(visualize)
+
+# Sekarang Anda dapat menggunakan fungsi `render` dari `visualize`
+render = visualize.render
 
 def show_amr(df):
     amr1 = df.iloc[0, 0]
