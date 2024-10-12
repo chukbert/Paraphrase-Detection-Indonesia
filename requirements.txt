@@ -1,3 +1,5 @@
+setuptools>=58.0.4
+wheel
 mpstemmer @ git+https://github.com/ariaghora/mpstemmer.git@25a5fd923af163a7eac3a5ec976984156ca8fa8b
 streamlit==1.37.0
 pandas==2.2.2
