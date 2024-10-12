@@ -16,3 +16,4 @@ Levenshtein
 Pillow
 imblearn
 xgboost
+lightgbm
