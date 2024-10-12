@@ -12,3 +12,4 @@ matplotlib-inline
 amrlib
 seaborn
 scikit-learn
+Levenshtein
