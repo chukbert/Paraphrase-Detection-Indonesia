@@ -87,18 +87,6 @@ import importlib.util
 import os
 from PIL import Image
 
-# Dapatkan path untuk visualize.py di dalam folder 'amr-tst-indo'
-module_name = "visualize"
-file_path = os.path.join(os.path.dirname(__file__), 'amr-tst-indo', 'visualize.py')
-
-# Mengimpor visualize.py secara dinamis
-spec = importlib.util.spec_from_file_location(module_name, file_path)
-visualize = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(visualize)
-
-# Sekarang Anda dapat menggunakan fungsi `render` dari `visualize`
-render = visualize.render
-
 def show_amr(df):
     amr1 = df.iloc[0, 0]
     output_path = "graph.png"
@@ -244,7 +232,6 @@ def main():
                 amr = pd.read_csv(datasets[dataset_choice][0])
                 amr = amr[['amr1', 'amr2']]
                 amr = pd.DataFrame([amr.loc[row_number - 1]])
-                show_amr(amr)
                 
                 paraphrase  = predict(feat, model_smatch)
                 st.subheader("Hasil Deteksi:")
@@ -258,7 +245,6 @@ def main():
                 amr = pd.read_csv(datasets[dataset_choice][0])
                 amr = amr[['amr1', 'amr2']]
                 amr = pd.DataFrame([amr.loc[row_number - 1]])
-                show_amr(amr)
                 
                 paraphrase  = predict(feat, model_combined)
                 st.subheader("Hasil Deteksi:")
@@ -273,7 +259,6 @@ def main():
                 amr = pd.read_csv(datasets[dataset_choice][0])
                 amr = amr[['amr1', 'amr2']]
                 amr = pd.DataFrame([amr.loc[row_number - 1]])
-                show_amr(amr)
                 
                 paraphrase  = predict(feat, model_lsa_tfidf)
                 st.subheader("Hasil Deteksi:")
@@ -288,7 +273,6 @@ def main():
                 amr = pd.read_csv(datasets[dataset_choice][5])
                 amr = amr[['amr1', 'amr2', 'merged_amr']]
                 amr = pd.DataFrame([amr.loc[row_number - 1]])
-                show_amr(amr)
                 plot_graph_merged(amr)
 
                 if dataset_choice != "MSRP (terjemahan manusia)":                
