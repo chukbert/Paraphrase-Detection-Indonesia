@@ -49,6 +49,7 @@ decorator
 defusedxml
 dill==0.3.8
 distlib==0.3.7
+distutils
 distributed==2024.6.0
 docker-pycreds==0.4.0
 editdistance==0.8.1
